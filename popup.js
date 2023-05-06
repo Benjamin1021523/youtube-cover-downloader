@@ -1,5 +1,8 @@
 var title;
+var infoTitle;
 var imgUrl;
+
+const regex1 = / *\/ */g;
 
 const setImageInfo = (ele) => {
   document.getElementById('title').value = title + '_' + ele.textContent;
@@ -19,8 +22,10 @@ chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
   }
 
   title = tabs[0].title.slice(0, tabs[0].title.length - ' - YouTube'.length);
+  infoTitle = title;
+  title = title.replaceAll(regex1, '、');
 
-  document.getElementById('info').textContent = title;
+  document.getElementById('info').textContent = `標題：《${infoTitle}》`;
 
   imgUrl = `https://i.ytimg.com/vi/${videoId}/`;
 
