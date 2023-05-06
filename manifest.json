@@ -1,0 +1,16 @@
+{
+  "name": "Download youtube cover",
+  "description": "Download youtube video cover",
+  "version": "0.1",
+  "permissions": [
+    "tabs",
+    "downloads"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 3
+}
